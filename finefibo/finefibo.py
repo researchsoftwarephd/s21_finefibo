@@ -13,6 +13,15 @@ def fibo_number(n: int) -> int:
 
     The n-th Fibonacci number.
     """
+
+    # Is the parameter a int?
+    if not isinstance(n, int):
+        raise TypeError('Parameter n must an integer')
+
+    # Is the value non-negative?
+    if n < 0:
+        raise ValueError('Parameter n must be non-negative')
+
     if n == 0:
         return 0
     if n == 1:
