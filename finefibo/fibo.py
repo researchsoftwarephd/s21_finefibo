@@ -4,7 +4,7 @@ An awesome Python module for obtaining Fibonacci numbers.
 
 import sys
 
-def fibo_number(n):
+def fibo_number(n: int) -> int:
     """Returns the n-th Fibonacci number.
 
     Arguments:
@@ -15,6 +15,11 @@ def fibo_number(n):
 
     The n-th Fibonacci number.
     """
+    if not isinstance(n, int):
+        raise TypeError('Parameter n must an integer')
+    if n < 0:
+        raise ValueError('Parameter n must be non-negative')
+
     if n == 0:
         return 0
     if n == 1:

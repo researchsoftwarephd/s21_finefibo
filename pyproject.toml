@@ -1,3 +1,13 @@
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-v --tb=short --strict-markers"
+testpaths = [ "tests" ]
+xfail_strict = "true"
+markers = [
+  "critical: The most critical tests",
+  "get: Test functions which return some value",
+  "fast: The fast tests" ]
