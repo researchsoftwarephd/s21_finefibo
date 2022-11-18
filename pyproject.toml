@@ -1,6 +1,37 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "finefibo"
+version = "0.0.3"
+description = "Fine Fibonacci numbers!"
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["fibonacci", "recursive"]
+license = {text = "MIT"}
+authors = [
+  {name = "Nuno Fachada", email = "nuno.fachada@ulusofona.pt"},
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "numpy",
+    "pandas",
+]
+
+[project.urls]
+Documentation = "https://researchsoftwarephd.github.io/finefibo"
+Source = "https://github.com/researchsoftwarephd/finefibo"
+
+[project.optional-dependencies]
+dev = ["pdoc", "pytest>=6.0", "coverage", "pytest-cov>=3.0.0"]
+
+[project.scripts]
+pyfibo = "finefibo.fibo:run_from_cli"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
